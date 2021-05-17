@@ -83,23 +83,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
   };
   quoteWork();
 
-  // Part 9cd
-  const blogWork = () => {    //this does not work
-    const blogEl = document.querySelectorAll(".blog-post");
-    console.log(blogEl)
+  // Part 9
+  const blogWork = () => {
+    const blogEl = document.querySelectorAll('.blog-post');
 
-    blogEl.forEach(function(bananas){
-      bananas.addEventListener("mouseout", mouseOut);
-      function mouseOut(){
-        blogEl.classList.toggle('purple');
-      }
-      bananas.addEventListener("mouseenter", mouseEnter);
-      function mouseEnter(){
-        blogEl.classList.toggle('red');
-      }
-    }
-  )
+    for(let i = 0; i < blogEl.length; i++){   //I tried using forEach and let of, but I couldnt get them to work
+      blogEl[i].addEventListener('mouseout', mouseOut);
+      function mouseOut() {
+          blogEl[i].classList.toggle('purple');
+      };
+
+      blogEl[i].addEventListener('mouseenter', mouseEnter);
+      function mouseEnter() {
+          blogEl[i].classList.toggle('red');
+      };
+    };
   }
   blogWork();
-
 });
